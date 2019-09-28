@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../services/rest.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-trasaction',
   templateUrl: './trasaction.component.html',
@@ -14,8 +16,9 @@ export class TrasactionComponent implements OnInit {
 
   userId: number;
   productId: number;
-  serviceId: number;
   initialDate: number;
+  serviceId: number;
+  serviceName: string;
 
   constructor(private api: RestService) { }
   
@@ -34,11 +37,17 @@ export class TrasactionComponent implements OnInit {
     });
   }
 
-  createTransaction(price: any) {
-    this.api.post('/transactions', { userId: 1, productId: this.productId,
+  createTransaction() {
+    this.api.post('/transactions', { userId: 2, productId: this.productId,
        serviceId: this.serviceId, initialDate:  this.initialDate, finalDate: this.initialDate }).then( response =>{
-
+        console.log(response);
     });
+  }
+
+  openModal(serviceId: number, serviceName: string) {
+    this.serviceId = serviceId;
+    this.serviceName = serviceName;
+    $('#exampleModal').modal('show');
   }
 
 }
