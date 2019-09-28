@@ -10,12 +10,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item" routerLinkActive="active"  >
                 <a class="nav-link" [routerLink]="['/dashboard/transaction']">Nueva Solicitud <span
                         class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/dashboard/score']" routerLinkActive="router-link-active"
+            <li class="nav-item"  routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/dashboard/score']"
                     href="#">Historico de Solicitudes</a>
             </li>
         </ul>
@@ -33,5 +33,5 @@
 </div>
 
 <div class="footer">
-    Hola
+    Creado con amor por TeamPanda
 </div>
