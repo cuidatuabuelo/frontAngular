@@ -23,7 +23,7 @@ export class ScoreComponent implements OnInit {
 
 
   async getTransactions() {
-    const list = await this.api.get('transactions');
+    const list = await this.api.get('/transactions');
     if (list.result) {
       this.transactions = list.data;
       console.log(list.data);
@@ -34,7 +34,7 @@ export class ScoreComponent implements OnInit {
 
     tran.transactionScore = score;
     console.log(tran);
-    const result = await this.api.put('transactions', {
+    const result = await this.api.put('/transactions', {
       transactionId: tran.transactionId,
       transactionScore: score
     }, tran.transactionId);
