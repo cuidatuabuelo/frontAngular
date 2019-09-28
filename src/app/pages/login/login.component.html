@@ -2,17 +2,17 @@
     <img src="/assets/img/loginBackground.jpeg" alt="" class="background-image">
     <div class="row row justify-content-md-center login-container">
         <div class="col md-auto"></div>
-        <form class="card col-md-3 justify-content-md-center align-self-center login-container">
+        <div class="card col-md-3 justify-content-md-center align-self-center login-box">
             <div class="form-group">
                 <label for="username">Usuario</label>
-                <input id="username" class="form-control" type="text" [(ngModel)]="password"/>
+                <input id="username" class="form-control" type="text" [(ngModel)]="username"/>
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
-                <input id="password" class="form-control" type="text" [(ngModel)]="username"/>
+                <input id="password" class="form-control" type="password" [(ngModel)]="password"/>
             </div>
             <button  type="button" class="btn btn-primary login-button" (click)="onChange()">Ingresar</button>
-        </form>
+        </div>
         <div class="col md-auto"></div>
     </div>
 

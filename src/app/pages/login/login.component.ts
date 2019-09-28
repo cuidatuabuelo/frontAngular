@@ -21,7 +21,16 @@ export class LoginComponent implements OnInit {
   states = {
     idle: {
       on: {
-        change: () => { this.login().then(value => this.currentState = value ? 'logged' : 'fail'); return 'loading' }
+        change: () => {
+          this.login().then(value => {
+            this.currentState = value ? 'logged' : 'fail'
+            if (this.currentState == 'logged') {
+              this.route.navigate(['dashboard/transaction'])
+            } else {
+              sleep(2000).then(v => this.currentState = 'idle');
+            }
+          }); return 'loading'
+        }
       }
     },
     loading: {
@@ -31,12 +40,11 @@ export class LoginComponent implements OnInit {
     },
     logged: {
       on: {
-        change: async () => this.route.navigate(['dashboard/transaction'])
       }
     },
     fail: {
       on: {
-        change: async () => { sleep(2000).then(v => this.currentState = 'idle'); return 'fail' }
+        change: async () => 'fail'
       }
     }
   }
