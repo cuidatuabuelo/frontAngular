@@ -61,7 +61,7 @@ export class TrasactionComponent implements OnInit {
 
     this.selectedProduct = this.products.filter(f => f.productId == this.productId)[0];
     this.selectedService = this.services.filter(f => f.serviceId === this.serviceId)[0];
-    this.selectedUser = this.users.filter(f => f.id === 2)[0];
+    this.selectedUser = this.users.filter(f => f.id === 3)[0];
 
     console.log(this.selectedProduct);
     console.log(this.selectedService);
