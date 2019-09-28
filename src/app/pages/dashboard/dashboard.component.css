@@ -3,3 +3,16 @@ img {
   height: auto;
   max-width: 65px;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 30px;
+  background: #f8f9fa;
+}
+
+li.active {
+  font-weight: bold;
+}
