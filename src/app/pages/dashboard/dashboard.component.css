@@ -5,12 +5,13 @@ img {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   left: 0px;
   width: 100%;
-  padding: 30px;
+  padding: 20px;
   background: #f8f9fa;
+  z-index: 10;
 }
 
 li.active {
