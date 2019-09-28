@@ -21,21 +21,21 @@ export class TrasactionComponent implements OnInit {
   
 
   ngOnInit() {
-    this.api.get('users').then(response => {
+    this.api.get('/users').then(response => {
       this.users = response;
       console.log(this.users);
     });
-    this.api.get('services').then(response => {
+    this.api.get('/services').then(response => {
       this.services = response;
     });
 
-    this.api.get('products').then(response => {
+    this.api.get('/products').then(response => {
       this.products = response;
     });
   }
 
   createTransaction(price: any) {
-    this.api.post('transactions', { userId: 1, productId: this.productId,
+    this.api.post('/transactions', { userId: 1, productId: this.productId,
        serviceId: this.serviceId, initialDate:  this.initialDate, finalDate: this.initialDate }).then( response =>{
 
     });
