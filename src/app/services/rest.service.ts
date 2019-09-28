@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class RestService {
 
 
-  apiUrl = 'http://192.168.43.29:45457/api/';
+  apiUrl = 'http://192.168.43.29:45457/api';
 
   constructor(private api: HttpClient) { }
 
