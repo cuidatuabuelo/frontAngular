@@ -12,3 +12,7 @@ img {
   padding: 30px;
   background: #f8f9fa;
 }
+
+li.active {
+  font-weight: bold;
+}
