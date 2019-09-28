@@ -6,20 +6,34 @@
             <div class="card-body">
                 <div class="list-group" *ngIf="transactions.length > 0">
                     <a class="list-group-item list-group-item-action " *ngFor="let tran of transactions">
+                        <div class="text-center m-a tt">
+                            <img [src]="tran.imageUrl" alt="">
+                        </div>
+<hr>
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">{{tran.serviceDescription}}</h5>
                             <small>{{tran.initialDate | date:'yyyy-MM-dd'}} - {{tran.finalDate | date:'yyyy-MM-dd'}}
                             </small>
+
                         </div>
-                        <p class="mb-1">{{tran.notes}}
+                        <hr>
+
+                        <p class="mb-1"><b>{{tran.notes}}</b>
+                            <br>
+                            Calificación actual:
                             <span
-                                class="badge badge-{{ tran.transactionScore == 1 ? 'danger' : tran.transactionScore == 2 ? 'warning' : 'success' }}">{{tran.transactionScore}}</span>
-                            <button class="btn btn-sm btn-success float-right ml-1"
-                                (click)="updateTransaction(tran,3)">3</button>
-                            <button class="btn btn-sm btn-warning float-right ml-1"
-                                (click)="updateTransaction(tran,2)">2</button>
-                            <button class="btn btn-sm btn-danger float-right ml-1"
-                                (click)="updateTransaction(tran,1)">1</button>
+                                class="badge badge-{{ tran.transactionScore == 1 ? 'danger' : tran.transactionScore == 2 ? 'warning' : 'success' }}">
+
+                                <i
+                                    class="fas fa-{{ tran.transactionScore == 1 ? 'sad-tear' : tran.transactionScore == 2 ? 'meh' : 'smile' }}"></i>
+
+                            </span>
+                            <button class="btn btn-success float-right ml-1" (click)="updateTransaction(tran,3)">
+                                <i class="fas fa-smile fa-2x"></i> </button>
+                            <button class=" btn btn-warning float-right ml-1" (click)="updateTransaction(tran,2)"><i
+                                    class="fas fa-meh fa-2x"></i> </button>
+                            <button class="btn btn-danger float-right ml-1" (click)="updateTransaction(tran,1)"><i
+                                    class="fas fa-sad-tear fa-2x"></i> </button>
 
                         </p>
                         <small>{{tran.productName}}</small>

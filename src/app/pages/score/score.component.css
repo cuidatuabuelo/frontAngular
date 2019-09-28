@@ -1,0 +1,24 @@
+.btn-danger {
+  background-color: #ff00005e;
+  color: #000 !important;
+}
+.btn-success {
+  background-color: #28a74573;
+  color: #000 !important;
+}
+
+.btn-warning {
+  background: #ffc1077a;
+  color: #000 !important;
+}
+
+img {
+  max-width: 100px;
+  display: inline;
+  border-radius: 50px;
+}
+
+.tt {
+  width: 100%;
+  height: auto;
+}
