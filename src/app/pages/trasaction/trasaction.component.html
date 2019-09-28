@@ -18,7 +18,7 @@
                                             <p><label>Precio: {{item.price}}</label></p>
                                             <p> Fecha: <input class="form-control" type="date" id="example-date-input"></p>
                                             <p> Producto: 
-                                                <select class="form-control">
+                                                <select class="form-control" [(ngModel)]="productId">
                                                     <option selected disabled>Seleccione un item</option>
                                                     <option *ngFor="let item of products">
                                                         {{item.name}}
@@ -31,7 +31,7 @@
                                 <div class="card-footer text-muted">
                                     <div class="row">
                                         <div class="col">
-                                            <button class="btn btn-info">Seleccionar</button>
+                                            <button class="btn btn-info" (click)="createTransaction">Seleccionar</button>
                                         </div>
                                     </div>
                                 </div>
