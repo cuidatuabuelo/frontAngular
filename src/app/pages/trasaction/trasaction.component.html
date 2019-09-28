@@ -1,1 +1,66 @@
-<p>trasaction works!</p>
+<div class="container-fluid">
+    <div class="row" style="margin-top: 5px;">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body" style="min-height: 80vh; max-height: 80vh;">
+                    <div class="row">
+                        <div class="col-4" *ngFor="let item of services">
+                            <div class="card">
+                                <div class="card-header">
+                                    {{item.description}}
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="/assets/nurse.png" width="60px" height="60px" />
+                                        </div>
+                                        <div class="col-9">
+                                            <p><label>Precio: {{item.price}}</label></p>
+                                            <p> Fecha: <input class="form-control" type="date" id="example-date-input"></p>
+                                            <p> Producto: 
+                                                <select class="form-control">
+                                                    <option selected disabled>Seleccione un item</option>
+                                                    <option *ngFor="let item of products">
+                                                        {{item.name}}
+                                                    </option>
+                                                </select>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <div class="row">
+                                        <div class="col">
+                                            <button class="btn btn-info">Seleccionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="row">
+        <div class="col-4" *ngFor="let item of users">
+            <div class="card" *ngIf="item.profile == 'Nurse'" >
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="/assets/nurse.png" width="60px" height="60px" />
+                        </div>
+                        <div class="col-9">
+                            <p><label>{{item.name}}</label></p>
+                            <p><label>Edad: {{item.age}}</label></p>
+                            <p><label>RH: {{item.bloodType}}</label></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> -->
+    
+    
+</div>
